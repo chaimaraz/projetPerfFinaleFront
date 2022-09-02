@@ -1,0 +1,120 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-transparent" id="gtco-main-nav">
+  <div class="container"><a class="navbar-brand">Formation</a>
+      <button class="navbar-toggler" data-target="#my-nav" onclick="myFunction(this)" data-toggle="collapse"><span
+              class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span></button>
+      <div id="my-nav" class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a class="nav-link" routerLink="/home">Accueil</a></li>
+              <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0"  >
+              <a routerLink="/login" class="btn btn-outline-dark my-3 my-sm-0 mr-3 text-uppercase  " id="fr" *ngIf="!loginStatus">login</a>
+              <a  class="btn btn-danger my-3 my-sm-0 mr-3 text-uppercase  " id="fr" *ngIf="loginStatus"  (click)="logOut()">logout</a>
+              <a routerLink="/inscription" class="btn btn-info my-3 my-sm-2 text-uppercase" *ngIf="!loginStatus" id="fr2">sign up</a>
+              <a routerLink="/profile" class=" my-3 my-sm-2 text-uppercase" *ngIf="loginStatus" id="fr2">profile</a>
+          </form>
+      </div>
+  </div>
+</nav>
+<div class="container-fluid gtco-banner-area">
+  <div class="container">
+      <div class="row">
+          <div >
+              <h1> apprenez quelque chose de nouveau avec nous aujourd'hui </h1>
+              <p>nous vous proposons des formations professionnelles encadrées par des formateurs experts </p>
+              <button id="button">voir plus <i class="fa fa-angle-right"></i></button>
+          <div class="col-md-6">
+              <div class="card"> <div class="img-fluid"><img class="card-img-top " src="assets/images/banner-img.png" ></div>
+          </div></div>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid gtco-features" id="about">
+  <div class="container">
+    <div class="row">
+
+     <div class="card" style="width: 18rem;"  *ngFor="let c of lescycles, index as i">
+        <img src="assets/formation.jpg" class="card-img-top" >
+        <div class="card-body">
+          <h5 class="card-title">Formation {{i+1}}</h5>
+          <p class="card-text">
+            theme de formation:<strong>{{c.theme}}</strong> <br>
+            <strong>{{c.dateDebut}}</strong> -> <strong>{{c.dateFin}}</strong> <br>
+            realisee par {{c.formateur.nom}} <br>
+            {{c.gouvernorat}} <br>
+          </p>
+          <a  [routerLink]="['/details', c.idCycle]" class="btn btn-warning" > en savoir plus </a>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+<footer class="container-fluid" id="gtco-footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-6" id="contact">
+              <h4> Contact Us </h4>
+              <input type="text" class="form-control" placeholder="Full Name">
+              <input type="email" class="form-control" placeholder="Email Address">
+              <textarea class="form-control" placeholder="Message"></textarea>
+              <a href="#" class="submit-button">READ MORE <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+          </div>
+          <div class="col-lg-6">
+              <div class="row">
+                  <div class="col-6">
+                      <h4>Company</h4>
+                      <ul class="nav flex-column company-nav">
+                          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">News</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">FAQ's</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                      </ul>
+                      <h4 class="mt-5">Fllow Us</h4>
+                      <ul class="nav follow-us-nav">
+                          <li class="nav-item"><a class="nav-link pl-0" href="#"><i class="fa fa-facebook"
+                                                                                    aria-hidden="true"></i></a></li>
+                          <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-twitter"
+                                                                               aria-hidden="true"></i></a></li>
+                          <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-google"
+                                                                               aria-hidden="true"></i></a></li>
+                          <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-linkedin"
+                                                                               aria-hidden="true"></i></a></li>
+                      </ul>
+                  </div>
+                  <div class="col-6">
+                      <h4>Services</h4>
+                      <ul class="nav flex-column services-nav">
+                          <li class="nav-item"><a class="nav-link" href="#">Web Design</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Graphics Design</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">App Design</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">SEO</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Marketing</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Analytic</a></li>
+                      </ul>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="owl-carousel/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+
+
+

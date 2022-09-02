@@ -1,0 +1,30 @@
+<app-menu-cycle></app-menu-cycle>
+<div class="container">
+    <h2> liste des cycles</h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">idCycle</th>
+        <th scope="col">entrprise</th>
+        <th scope="col">numAction</th>
+        <th scope="col">theme</th>
+        <th scope="col">formateur</th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of lescycles">
+        <th scope="row">{{c.idCycle}}</th>
+        <td>{{c.entrprise}}</td>
+        <td>{{c.numAction}}</td>
+        <td>{{c.theme}}</td>
+        <td>{{c.formateur.nom}} </td>
+        <td>
+            <button class="btn btn-info me-2" [routerLink]="['/addCycle', c.idCycle]">Editer</button>
+            <button class="btn btn-danger" (click)="deleteCycle(c.idCycle)">Eliminer</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

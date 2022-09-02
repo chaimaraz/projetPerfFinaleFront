@@ -1,0 +1,43 @@
+<app-menu-cycle></app-menu-cycle>
+
+<div class="container">
+<h1> Ajouter un cycle </h1>
+<form>
+<label >entreprise</label>
+<input type="text" [(ngModel)]="cycle.entrprise" name="entrprise" id=""> <br>
+<label> numAction</label>
+<input type="number" [(ngModel)]="cycle.numAction" name="numAction" id=""> <br>
+<label> theme</label>
+<input type="text" [(ngModel)]="cycle.theme" name="theme" id=""> <br>
+<label> lieu</label>
+<input type="text" [(ngModel)]="cycle.lieu" name="lieu" id=""> <br>
+<label> dateDebut</label>
+<input type="date" [(ngModel)]="cycle.dateDebut" name="dateDebut" id=""> <br>
+<label> dateFin</label>
+<input type="date" [(ngModel)]="cycle.dateFin" name="dateFin" id=""> <br>
+<label> heureDebut</label>
+<input type="time" [(ngModel)]="cycle.heureDebut" name="heureDebut" id=""> <br>
+<label> duree</label>
+<input type="text" [(ngModel)]="cycle.duree" name="duree" id=""> <br>
+<label> pause</label>
+<input type="text" [(ngModel)]="cycle.pause" name="pause" id=""> <br>
+<label> mode</label>
+<input type="text" [(ngModel)]="cycle.mode" name="mode" id=""> <br>
+<label> choix</label>
+<input type="text" [(ngModel)]="cycle.choix" name="choix" id=""> <br>
+<label> gouvernorat</label>
+<input type="text" [(ngModel)]="cycle.gouvernorat" name="gouvernorat" id=""> <br>
+<label> numSalle</label>
+<input type="text" [(ngModel)]="cycle.numSalle" name="numSalle" id=""> <br>
+<label for="formateur"> formateur</label>
+<select [compareWith]="comparerFormateur"[(ngModel)]="cycle.formateur" class="form-control col-sm-2" name="formateur">
+    <option [ngValue]="undefined"> -- selectionner un formateur --</option>
+    <option *ngFor="let f of formateurs "[ngValue]="f"> {{f.nom}}</option>
+
+</select>
+<br>
+<button type="submit"  class="btn btn-primary" (click)="createCycle()" *ngIf="!cycle.idCycle">ajouter</button>
+<button type="submit"  class="btn btn-primary" (click)="modifierCycle()" *ngIf="cycle.idCycle">Modifier</button>
+
+</form>
+</div>

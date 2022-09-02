@@ -1,0 +1,15 @@
+<app-menu-formateur></app-menu-formateur>
+<h1> Ajouter un formateur </h1>
+<form #addForm="ngForm" (ngSubmit)="onAddFormateur(addForm)">
+<label >Nom</label>
+<input type="text" ngModel name="nom" id=""> <br>
+<label> prenom</label>
+<input type="text" ngModel name="prenom" id=""> <br>
+<label> adresse</label>
+<input type="text" ngModel name="adresse" id=""> <br>
+<label> Cin</label>
+<input type="text" ngModel name="cin" id=""> <br>
+<label> telephone</label>
+<input type="text" ngModel name="tel" id=""> <br>
+<button type="submit" [disabled]="addForm.invalid" class="btn btn-primary">ajouter</button>
+</form>

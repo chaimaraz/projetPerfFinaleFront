@@ -1,0 +1,104 @@
+<h3>les formateurs</h3>
+
+<app-menu-formateur></app-menu-formateur>
+
+
+<form class="form-inline my-2 my-lg-0" (ngSubmit)="searchFormateur(key.value)">
+   <input #key ngModel class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="key">
+   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+ </form>
+
+<div class="container" id="main-container">
+
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">prenom</th>
+        <th scope="col">cin</th>
+        <th scope="col">tel</th>
+        <th scope="col">adresse</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of lesFormateurs">
+        <th scope="row">{{f.idFormateur}}</th>
+        <td>{{f.nom}}</td>
+        <td>{{f.prenom}}</td>
+        <td>{{f.cin}}</td>
+        <td>{{f.tel}}</td>
+        <td>{{f.adresse}}</td>
+        <td> <button (click)="onOpenModal(f, 'edit')">modifier</button> <button (click)="onOpenModal(f, 'delete')">supprimer</button> </td>
+      </tr>
+</table>
+{{lesFormateurs|json}}
+
+
+<!-- Edit Modal -->
+<div class="modal fade" id="updateEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="employeeEditModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="updateEmployeeModalLabel">modifier formateur </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <form #editForm="ngForm">
+               <div class="form-group">
+                  <label for="name">Nom</label>
+                  <input type="text" ngModel="{{editFormateur?.nom}}" name="nom" class="form-control" id="nom" aria-describedby="emailHelp" placeholder="Nom">
+               </div>
+               <input type="hidden"  ngModel="{{editFormateur?.idFormateur}}" name="idFormateur" class="form-control" id="id" placeholder="id">
+               <div class="form-group">
+                  <label>prenom</label>
+                  <input type="text"  ngModel="{{editFormateur?.prenom}}" name="prenom" class="form-control" id="prenom" placeholder="prenom">
+               </div>
+               <div class="form-group">
+                  <label >adresse</label>
+                  <input type="text" name="adresse" ngModel="{{editFormateur?.adresse}}" class="form-control" id="adresse" placeholder="adresse">
+               </div>
+               <div class="form-group">
+                  <label >Cin</label>
+                  <input type="text"  class="form-control" ngModel="{{editFormateur?.cin}}" id="cin" name="cin" placeholder="cin">
+               </div>
+               <div class="form-group">
+                  <label >telephone</label>
+                  <input type="text" name="tel" class="form-control" ngModel="{{editFormateur?.tel}}" id="tel" placeholder="telephone">
+               </div>
+               <div class="modal-footer">
+                  <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">fermer</button>
+                  <button (click)="onUpdateFormateur(editForm.value)" data-dismiss="modal" class="btn btn-primary" >enregistrer</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+ </div>
+
+
+ <!-- Delete Modal -->
+<div class="modal fade" id="deleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title" id="deleteModelLabel">supprimer formateur</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <p>Voulez-vous vraiment le supprimer ? </p>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="onDeleteFormateur(deleteFormateur.idFormateur)">oui</button>
+               <button  class="btn btn-danger" data-dismiss="modal">non</button>
+            </div>
+         </div>
+      </div>
+   </div>
+ </div>
+
+</div>
