@@ -9,6 +9,7 @@ import { CycleService } from 'src/app/cycle.service';
 })
 export class ListerCyclesComponent implements OnInit {
   lescycles: Cycle[]=[];
+  val:any;
   constructor(private cycleService:CycleService) { }
 
   ngOnInit(): void {

@@ -1,3 +1,8 @@
+import { MenuFormateurComponent } from './components/formateur/menu-formateur/menu-formateur.component';
+import { MenuCycleComponent } from './components/cycle/menu-cycle/menu-cycle.component';
+import { ChaqueFormationComponent } from './components/chaque-formation/chaque-formation.component';
+import { FormationComponent } from './components/formation/formation.component';
+import { FichePresenceComponent } from './components/fiche-presence/fiche-presence.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 import { NgModule } from '@angular/core';
@@ -14,26 +19,38 @@ import { MenuAdminComponent } from './components/menu-admin/menu-admin.component
 import { ListerFormateurComponent } from './components/formateur/lister-formateur/lister-formateur.component';
 import { CreateFormateurComponent } from './components/formateur/create-formateur/create-formateur.component';
 import { DetailsFormationComponent } from './components/details-formation/details-formation.component';
+import { AdminGuardGuard } from './guards/admin-guard.guard';
+import { ParticipantGuardGuard } from './guards/participant-guard.guard';
 
 
 const routes:Routes =[
-  {path:'Admin', component:MenuAdminComponent},
-  {path:'formateur', component:ListerFormateurComponent},
-  {path:'addFormateur', component:CreateFormateurComponent},
-  {path:'cycles', component:ListerCyclesComponent},
-  {path:'addCycle', component:CreateCycleComponent},
-  {path:'addCycle/:id', component:CreateCycleComponent},
-  {path:'fichepresence', component:AppComponent},
-  {path:'formation', component:AppComponent},
+  {path:'Admin', component:MenuAdminComponent ,
+  children:[
+
+    {path:'cycles', component:MenuCycleComponent,
+    children:[
+    {path:'lister', component:ListerCyclesComponent},
+    {path:'addCycle', component:CreateCycleComponent},
+    {path:'lister/:id', component:CreateCycleComponent},
+  ]},
+  {path:'formateur', component:MenuFormateurComponent,
+  children:[
+    {path:'lister', component:ListerFormateurComponent},
+    {path:'addFormateur', component:CreateFormateurComponent},
+  ]},
+    {path:'fiche', component:FichePresenceComponent},
+    {path:'formation', component:FormationComponent},
+    {path:'formation/:id', component:ChaqueFormationComponent},
+  ],canActivate:[AdminGuardGuard]},
+    {path:'proprosFormation', component:MesPropreFormationComponent,canActivate:[ParticipantGuardGuard]},
+    {path:'profile', component:ProfileComponent,canActivate:[ParticipantGuardGuard]},
   {path:'inscription', component:InscriptionComponent},
   {path:'login', component:LoginPageComponent},
   {path:'home', component:AccueilPageComponent},
   {path:'details', component:DetailsFormationComponent},
   {path:'details/:id', component:DetailsFormationComponent},
-  {path:'proprosFormation', component:MesPropreFormationComponent},
-  {path:'profile', component:ProfileComponent},
   {path:'', redirectTo:'home', pathMatch:'full'},
-  {path:'**', component:ErrorComponent}
+  {path:'**', component:ErrorComponent},
 
   ]
 

@@ -9,7 +9,7 @@ import { Formateur } from './formateur';
 })
 export class CycleService {
   lien: string='http://localhost:8084/cycles';
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient) {
   }
 
 

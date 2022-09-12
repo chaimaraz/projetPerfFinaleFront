@@ -1,6 +1,12 @@
-<app-menu-cycle></app-menu-cycle>
+
+
+<form >
+  <input type="text" name="search" [(ngModel)]="val" placeholder="search ..."/>
+</form>
+
 <div class="container">
     <h2> liste des cycles</h2>
+
 <table class="table">
     <thead>
       <tr>
@@ -13,14 +19,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let c of lescycles">
+      <tr *ngFor="let c of lescycles | filter:val">
         <th scope="row">{{c.idCycle}}</th>
         <td>{{c.entrprise}}</td>
         <td>{{c.numAction}}</td>
         <td>{{c.theme}}</td>
         <td>{{c.formateur.nom}} </td>
         <td>
-            <button class="btn btn-info me-2" [routerLink]="['/addCycle', c.idCycle]">Editer</button>
+            <button class="btn btn-info me-2" [routerLink]="[ c.idCycle]">Editer</button>
             <button class="btn btn-danger" (click)="deleteCycle(c.idCycle)">Eliminer</button>
         </td>
       </tr>

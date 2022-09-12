@@ -1,0 +1,81 @@
+<div>
+<form >
+  <input type="text" name="search" [(ngModel)]="theme" placeholder="theme .."/>
+  <input type="texte" name="datedebut" [(ngModel)]="formateur" placeholder="formateur .."/>
+  <input type="date" name="datedebut" [(ngModel)]="dateD" placeholder="date debut .."/>
+  <input type="time" name="datedebut" [(ngModel)]="HeureD" placeholder="Heure debut .."/>
+  <button (click)="OnSearch()">search</button>
+</form>
+<div id="section" *ngIf="isAvailable">
+
+<table  class="table table-bordered">
+  <tr>
+    <th rowspan="3">image</th>
+    <th rowspan="3"><h1> feuille de presence </h1></th>
+    <th> ref:........</th>
+  </tr>
+  <tr>
+    <th>version:......</th>
+  </tr>
+  <tr>
+    <th>date d'application: ......</th>
+  </tr>
+</table>
+
+
+
+<div *ngFor="let cy of Cycles">
+  <strong>Entreprise</strong> :{{cy.entrprise}} <br>
+  <strong>Num Action:  </strong>{{cy.numAction}} -- <strong>choix :</strong>{{cy.choix}} <br>
+  <strong>Theme de formation:</strong> {{cy.theme}} --<strong> Mode de formation:</strong> {{cy.mode}} <br>
+  <strong>Lieu :</strong> {{cy.lieu}}  -- <strong> Gouvernorat:</strong> {{cy.gouvernorat}} -- <strong>Salle:</strong> {{cy.numSalle}} <br>
+  <strong>Periode du: </strong>{{cy.dateDebut}} <strong> Au</strong> {{cy.dateFin}}  --<strong> Horaire a :</strong>{{cy.heureDebut}} -- <strong>duree:</strong> {{cy.duree}}H -- <strong>Pause:</strong> {{cy.pause}} minute
+
+</div>
+
+
+
+<div>
+  <table class="table table-bordered">
+  <tr>
+    <th scope="col" rowspan="2">nom et prenom </th>
+    <th scope="col" rowspan="2">cin</th>
+    <th scope="col" rowspan="2">entrprise </th>
+    <th scope="col" rowspan="2"> direction/service</th>
+    <th scope="col" colspan="3">idPar</th>
+  </tr>
+    <tr>
+    <th *ngFor="let r of resultat">
+       journee du <br>
+      {{r}}</th>
+
+    </tr>
+  <tr *ngFor="let f of formations " >
+    <td> {{f.user.nom}} {{f.user.prenom}}</td>
+    <td>{{f.user.infosSupp.cin}}</td>
+    <td> {{f.user.infosSupp.entreprise}}</td>
+    <td> {{f.user.infosSupp.direction}}</td>
+    <td  *ngFor="let r of resultat"> {{f.user.id}}</td>
+
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>nom et prenom du formateur</th>
+    <th>signature</th>
+  </tr>
+  <tr>
+  <td *ngFor="let cyc of Cycles">
+    {{cyc.formateur.nom}} {{cyc.formateur.prenom}}
+  </td>
+  </tr>
+</table>
+
+<h3>signature et cachet de l'organisme de formation/Entreprise</h3>
+</div>
+<button printSectionId="section" ngxPrint > imprimer</button>
+</div>
+
+
+

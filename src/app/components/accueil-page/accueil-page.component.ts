@@ -29,7 +29,7 @@ export class AccueilPageComponent implements OnInit {
   }*/
 
   logOut(){
-    sessionStorage.removeItem('user');
+    localStorage.removeItem('user');
     this.router.navigate(["/home"]);
     this.ins.logoutUser();
   }

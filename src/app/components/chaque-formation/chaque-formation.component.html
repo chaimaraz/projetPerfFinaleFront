@@ -1,0 +1,29 @@
+<div>
+  {{cycle.idCycle}}
+
+
+<table>
+  <tr>
+    <th> nom et prenom</th>
+    <th> Cin</th>
+    <th> Entrprise</th>
+    <th> direction/service</th>
+    <th>action</th>
+  </tr>
+  <tr *ngFor="let f of formations">
+ <td>{{f.user.nom}} {{f.user.prenom}}</td>
+ <td>{{f.user.infosSupp.cin}}</td>
+ <td>{{f.user.infosSupp.entreprise}}</td>
+ <td>{{f.user.infosSupp.direction}}</td>
+ <td><button (click)="deleteFormation(f.id)"> supprimer </button></td>
+  </tr>
+</table>
+
+
+
+</div>
+
+
+
+
+

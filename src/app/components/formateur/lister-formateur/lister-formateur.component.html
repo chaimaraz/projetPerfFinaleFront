@@ -1,12 +1,11 @@
 <h3>les formateurs</h3>
 
-<app-menu-formateur></app-menu-formateur>
 
 
-<form class="form-inline my-2 my-lg-0" (ngSubmit)="searchFormateur(key.value)">
-   <input #key ngModel class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="key">
-   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
- </form>
+
+<form>
+  <input type="text" name="search" [(ngModel)]="val" placeholder="search ..."/>
+</form>
 
 <div class="container" id="main-container">
 
@@ -23,7 +22,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let f of lesFormateurs">
+      <tr *ngFor="let f of lesFormateurs| filter:val">
         <th scope="row">{{f.idFormateur}}</th>
         <td>{{f.nom}}</td>
         <td>{{f.prenom}}</td>

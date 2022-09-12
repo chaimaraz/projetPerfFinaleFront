@@ -15,6 +15,9 @@ isLoggedIn = new BehaviorSubject(false);
   inscrire(user: User): Observable<User> {
     return this.http.post<User>(`${this.baseUrl}`, user);
   }
+  ajouter(user: User): Observable<User> {
+    return this.http.post<User>(`${this.baseUrl}`+ '/login', user);
+  }
 
   login(email: string, password: string): Observable<User> {
     this.isLoggedIn.next(true);

@@ -16,7 +16,7 @@ export class User {
 
 export enum ERole {
   ADMIN= 'ADMIN',
-  PARTCIPANT = 'PARTCIPANT'
+  PARTCIPANT = 'PARTICIPANT'
 }
 
 
@@ -25,4 +25,10 @@ export class ParticipantInformation {
   cin: string;
   direction: string;
   entreprise: string;
+
+
+
+
+
 }
+

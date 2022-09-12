@@ -38,7 +38,7 @@ export class CreateFormateurComponent implements OnInit {
         alert(error.message)
       }
     )
-    this.router.navigate(['/formateur']);
+    this.router.navigate(['Admin/formateur/lister']);
 
   }
   ngOnInit(): void {

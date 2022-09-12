@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MesPropreFormationComponent } from './components/mes-propre-formation/mes-propre-formation.component';
-import { UpdateFormateurComponent } from './components/formateur/update-formateur/update-formateur.component';
 import { AccueilPageComponent } from './components/accueil-page/accueil-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
@@ -20,12 +19,15 @@ import { ListerFormateurComponent } from './components/formateur/lister-formateu
 import { CreateFormateurComponent } from './components/formateur/create-formateur/create-formateur.component';
 import { DetailsFormationComponent } from './components/details-formation/details-formation.component';
 import { ProfileComponent } from './components/profile/profile.component';
-
+import { FichePresenceComponent } from './components/fiche-presence/fiche-presence.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPrintModule } from 'ngx-print';
+import { FormationComponent } from './components/formation/formation.component';
+import { ChaqueFormationComponent } from './components/chaque-formation/chaque-formation.component';
 @NgModule({
   declarations: [
     AppComponent,
     CreateFormateurComponent,
-    UpdateFormateurComponent,
     ListerFormateurComponent,
     MenuAdminComponent,
     ErrorComponent,
@@ -38,14 +40,19 @@ import { ProfileComponent } from './components/profile/profile.component';
     AccueilPageComponent,
     DetailsFormationComponent,
     MesPropreFormationComponent,
-    ProfileComponent
+    ProfileComponent,
+    FichePresenceComponent,
+    FormationComponent,
+    ChaqueFormationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule,
+    NgxPrintModule
 
 
   ],
