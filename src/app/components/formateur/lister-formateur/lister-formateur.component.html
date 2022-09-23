@@ -1,38 +1,55 @@
-<h3>les formateurs</h3>
+<div class="login-box">
+  <div class="signin topline">
 
+    <form  class="frm  ">
+                      <div class="input-group">
+                          <input type="text" name="search" [(ngModel)]="val" class="form-control bg-light border-0 small" placeholder="rechercher..."
+                              aria-label="Search" aria-describedby="basic-addon2"  [(ngModel)]="val">
+                          <div class="input-group-append">
+                              <button class="btn btn-primary" type="button">
+                                  <i class="fas fa-search fa-sm"></i>
+                              </button>
+                          </div>
+                      </div>
+     </form>
 
+    <h2>les formateurs</h2>
 
-
-<form>
-  <input type="text" name="search" [(ngModel)]="val" placeholder="search ..."/>
-</form>
 
 <div class="container" id="main-container">
 
 <table class="table table-sm">
     <thead>
       <tr>
-        <th scope="col">id</th>
-        <th scope="col">Nom</th>
-        <th scope="col">prenom</th>
-        <th scope="col">cin</th>
-        <th scope="col">tel</th>
-        <th scope="col">adresse</th>
-        <th scope="col">action</th>
+        <th scope="col" id="ligne">id</th>
+        <th scope="col" id="ligne">Nom</th>
+        <th scope="col"id="ligne">prenom</th>
+        <th scope="col"id="ligne">cin</th>
+        <th scope="col" id="ligne">tel</th>
+        <th scope="col"id="ligne">adresse</th>
+        <th scope="col"id="ligne">action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let f of lesFormateurs| filter:val">
+      <tr class="table-light" *ngFor="let f of lesFormateurs| filter:val">
         <th scope="row">{{f.idFormateur}}</th>
-        <td>{{f.nom}}</td>
-        <td>{{f.prenom}}</td>
-        <td>{{f.cin}}</td>
-        <td>{{f.tel}}</td>
-        <td>{{f.adresse}}</td>
-        <td> <button (click)="onOpenModal(f, 'edit')">modifier</button> <button (click)="onOpenModal(f, 'delete')">supprimer</button> </td>
+        <td id="ligne">{{f.nom}}</td>
+        <td id="ligne">{{f.prenom}}</td>
+        <td id="ligne">{{f.cin}}</td>
+        <td id="ligne">{{f.tel}}</td>
+        <td id="ligne">{{f.adresse}}</td>
+        <td id="ligne"> <div class="form-group row">  <div class="col-md-5"><button (click)="onOpenModal(f, 'edit')" class="button-1 " role="button">modifier</button> </div> <div class="col-md-5"><button class="button-5 " role="button" (click)="onOpenModal(f, 'delete')">supprimer</button> </div></div></td>
       </tr>
 </table>
-{{lesFormateurs|json}}
+
+
+
+
+
+
+</div>
+  </div>
+</div>
 
 
 <!-- Edit Modal -->
@@ -100,4 +117,3 @@
    </div>
  </div>
 
-</div>

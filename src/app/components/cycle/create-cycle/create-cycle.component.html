@@ -1,43 +1,86 @@
 
+<div class="login-box">
+  <div class="signin topline">
+    <div class="container">
 
-<div class="container">
-<h1> Ajouter un cycle </h1>
-<form>
-<label >entreprise</label>
-<input type="text" [(ngModel)]="cycle.entrprise" name="entrprise" id=""> <br>
-<label> numAction</label>
-<input type="number" [(ngModel)]="cycle.numAction" name="numAction" id=""> <br>
-<label> theme</label>
-<input type="text" [(ngModel)]="cycle.theme" name="theme" id=""> <br>
-<label> lieu</label>
-<input type="text" [(ngModel)]="cycle.lieu" name="lieu" id=""> <br>
-<label> dateDebut</label>
-<input type="date" [(ngModel)]="cycle.dateDebut" name="dateDebut" id=""> <br>
-<label> dateFin</label>
-<input type="date" [(ngModel)]="cycle.dateFin" name="dateFin" id=""> <br>
-<label> heureDebut</label>
-<input type="time" [(ngModel)]="cycle.heureDebut" name="heureDebut" id=""> <br>
-<label> duree</label>
-<input type="text" [(ngModel)]="cycle.duree" name="duree" id=""> <br>
-<label> pause</label>
-<input type="text" [(ngModel)]="cycle.pause" name="pause" id=""> <br>
-<label> mode</label>
-<input type="text" [(ngModel)]="cycle.mode" name="mode" id=""> <br>
-<label> choix</label>
-<input type="text" [(ngModel)]="cycle.choix" name="choix" id=""> <br>
-<label> gouvernorat</label>
-<input type="text" [(ngModel)]="cycle.gouvernorat" name="gouvernorat" id=""> <br>
-<label> numSalle</label>
-<input type="text" [(ngModel)]="cycle.numSalle" name="numSalle" id=""> <br>
-<label for="formateur"> formateur</label>
-<select [compareWith]="comparerFormateur"[(ngModel)]="cycle.formateur" class="form-control col-sm-2" name="formateur">
-    <option [ngValue]="undefined"> -- selectionner un formateur --</option>
-    <option *ngFor="let f of formateurs "[ngValue]="f"> {{f.nom}}</option>
+  <div id="box">
+      <h1> Ajouter un cycle </h1>
+      <form>
+        <div class="row">
+          <div class="col">
+      <label class="col-form-label col-form-label-lg">entreprise</label>
+      <input type="text" class="form-control form-control-lg" [(ngModel)]="cycle.entrprise" name="entrprise" id=""> <br>
+          </div>
+          <div class="col">
+      <label class="col-form-label col-form-label-lg"> numAction</label>
+      <input type="number" class="form-control form-control-lg" [(ngModel)]="cycle.numAction" name="numAction" id=""> <br>
+          </div>
+          <div class="col">
+      <label class="col-form-label col-form-label-lg"> theme</label>
+      <input class="form-control form-control-lg" type="text" [(ngModel)]="cycle.theme" name="theme" id=""> <br>
+          </div>
+            <div class="col">
+      <label class="col-form-label col-form-label-lg"> lieu</label>
+      <input class="form-control form-control-lg" type="text" [(ngModel)]="cycle.lieu" name="lieu" id=""> <br>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col">
+      <label class="col-form-label col-form-label-lg"> dateDebut</label>
+      <input class="form-control form-control-lg" type="date" [(ngModel)]="cycle.dateDebut" name="dateDebut" id=""> <br>
+          </div>
+            <div class="col">
+      <label class="col-form-label col-form-label-lg"> dateFin</label>
 
-</select>
-<br>
-<button type="submit"  class="btn btn-primary" (click)="createCycle()" *ngIf="!cycle.idCycle">ajouter</button>
-<button type="submit"  class="btn btn-primary" (click)="modifierCycle()" *ngIf="cycle.idCycle">Modifier</button>
+      <input class="form-control form-control-lg" type="date" [(ngModel)]="cycle.dateFin" name="dateFin" id=""> <br>
+       </div>
+        </div>
+        <div class="row">
+          <div class="col">
+        <label class="col-form-label col-form-label-lg"> heureDebut</label>
+      <input class="form-control form-control-lg" type="time" [(ngModel)]="cycle.heureDebut" name="heureDebut" id=""> <br>
+          </div>
+            <div class="col">
+      <label class="col-form-label col-form-label-lg"> duree</label>
+      <input class="form-control form-control-lg" type="text" [(ngModel)]="cycle.duree" name="duree" id=""> <br>
+            </div>
+              <div class="col">
+      <label class="col-form-label col-form-label-lg"> pause</label>
+      <input class="form-control form-control-lg" type="text" [(ngModel)]="cycle.pause" name="pause" id=""> <br>
+              </div>
+        </div>
+        <div class="row">
+          <div class="col">
+      <label class="col-form-label col-form-label-lg"> mode</label>
+      <input class="form-control form-control-lg" type="text" [(ngModel)]="cycle.mode" name="mode" id=""> <br>
+          </div>
+            <div class="col">
+      <label class="col-form-label col-form-label-lg"> choix</label>
+      <input class="form-control form-control-lg" type="text" [(ngModel)]="cycle.choix" name="choix" id=""> <br>
+            </div>
+              <div class="col">
+      <label class="col-form-label col-form-label-lg"> gouvernorat</label>
+      <input class="form-control form-control-lg" type="text" [(ngModel)]="cycle.gouvernorat" name="gouvernorat" id=""> <br>
+              </div>
+                <div class="col">
+      <label class="col-form-label col-form-label-lg"> numSalle</label>
+      <input class="form-control form-control-lg" type="text" [(ngModel)]="cycle.numSalle" name="numSalle" id=""> <br>
+                </div>
+        </div>
+      <label for="formateur" class="col-form-label col-form-label-lg"> formateur</label>
+      <select [compareWith]="comparerFormateur"[(ngModel)]="cycle.formateur" class="form-control col-sm-2" name="formateur">
+          <option [ngValue]="undefined"> -- selectionner un formateur --</option>
+          <option *ngFor="let f of formateurs "[ngValue]="f"> {{f.nom}}</option>
 
-</form>
+      </select>
+      <br>
+      <button type="submit"  class="btn btn-primary" (click)="createCycle()" *ngIf="!cycle.idCycle" class="button-88">ajouter</button>
+      <button type="submit"  class="btn btn-primary" (click)="modifierCycle()" *ngIf="cycle.idCycle" class="button-44" >Modifier</button>
+
+      </form>
+    </div>
+      </div>
+  </div>
 </div>
+
+

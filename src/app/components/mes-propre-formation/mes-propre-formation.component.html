@@ -1,29 +1,36 @@
 
-<div class="container">
-    <h2> liste des cycles</h2>
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">idCycle</th>
-        <th scope="col">entrprise</th>
-        <th scope="col">numAction</th>
-        <th scope="col">theme</th>
-        <th>action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let c of formations">
-        <th scope="row">{{c.id}}</th>
-        <td>{{c.cycle.idCycle}}</td>
-        <td>{{c.user.id}}</td>
-        <td>{{c.registeredDate}}</td>
-        <td>
-            <button class="btn btn-info me-2" >details</button>
-            <button class="btn btn-danger" (click)="deleteFormation(c.id)">annuler</button>
-        </td>
-      </tr>
+<div class="bg">
+  <div class="columns">
+    <div class="login-box">
+      <div class="signin topline">
+        <div class="container">
+          <h2> liste des cycles</h2>
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">idCycle</th>
+              <th scope="col">entrprise</th>
+              <th scope="col">numAction</th>
+              <th scope="col">theme</th>
+              <th>action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let c of formations">
+              <th scope="row">{{c.id}}</th>
+              <td>{{c.cycle.idCycle}}</td>
+              <td>{{c.user.id}}</td>
+              <td>{{c.registeredDate}}</td>
+              <td>
+                  <button class="btn btn-info me-2" >details</button>
+                  <button class="btn btn-danger" (click)="deleteFormation(c.id)">annuler</button>
+              </td>
+            </tr>
 
-    </tbody>
-  </table>
+          </tbody>
+        </table>
+      </div>
+  </div>
 </div>
+
 

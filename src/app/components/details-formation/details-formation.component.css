@@ -1,10 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,300,200,700");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,1000,300,1000,1000");
 
 
 
-.error-message {
-  color: rgb(255, 34, 34);
-}
+
 .bg {
   background-image: linear-gradient(
     to right bottom,
@@ -21,7 +19,7 @@
     #141414,
     #0c0c0c
   );
-  background-size: 400% 400%;
+  background-size: 500% 500%;
   animation: gradient 15s ease infinite;
 }
 .columns {
@@ -102,27 +100,283 @@
 
 
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  min-width: 1300px;
-  min-height: 100px;
-  padding: 20rem 30rem;
+  min-width: 200px;
+  min-height: 70px;
+  padding: 5rem 5rem;
   background-color: white;
 }
-.topline:after {
-      content: "";
-      position: absolute;
-      width: 40%;
-      transform: scaleX(1);
 
-      height: 5px;
-      top: -5px;
-      left: 0;
-      background-color: #0e1776;
-    }
 @media screen and (max-width: 776px) {
   .login-box {
     padding: 40rem 2rem !important;
     right: unset !important;
-    width: 1000px !important;
-    max-width: 1000px;
+    width: 800px !important;
+    max-width: 800px;
   }
 }
+#box{
+margin-top: 40px;
+margin-left: 50px;
+font-size: 30px;
+font-family: Arial, Helvetica, sans-serif;
+white-space: 1px;
+font-style: oblique;
+position: relative;
+bottom:100px;
+}
+.first-name{
+  margin-bottom: 100px;
+  font-style: normal;
+  font-size: 50px;
+
+  /*background: linear-gradient(43deg, #2ddffa 10%, #ed55e3 46%, #FFCC70 100%);
+*/
+background: -webkit-linear-gradient(left, #ff00bf, #01e6f8);
+
+  -webkit-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -ms-text-fill-color: transparent;
+  -o-text-fill-color: transparent;
+
+  font-weight: bold;
+}
+
+.second-name{
+  position: relative;
+  bottom:  100px;
+  font-style: normal;
+  font-size: 25px;
+  left: 50px;
+
+  /*background: linear-gradient(43deg, #2ddffa 10%, #ed55e3 46%, #FFCC70 100%);
+*/
+background: -webkit-linear-gradient(left, #b20088, #ff04c4);
+
+  -webkit-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -ms-text-fill-color: transparent;
+  -o-text-fill-color: transparent;
+
+  font-weight: bold;
+
+}
+
+
+
+
+/* CSS */
+.button-82-pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-82-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-82-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.button-82-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: rgb(255, 0, 144);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-82-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.button-82-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-82-pushable:hover .button-82-front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:hover .button-82-shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+
+
+/* CSS */
+.button-83-pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-83-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-83-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.button-83-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: rgb(255, 174, 0);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-83-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.button-83-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-83-pushable:hover .button-82-front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-83-pushable:active .button-82-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-83-pushable:hover .button-82-shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-83-pushable:active .button-82-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-83-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+

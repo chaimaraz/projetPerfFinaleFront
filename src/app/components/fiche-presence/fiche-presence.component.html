@@ -1,81 +1,120 @@
-<div>
-<form >
-  <input type="text" name="search" [(ngModel)]="theme" placeholder="theme .."/>
-  <input type="texte" name="datedebut" [(ngModel)]="formateur" placeholder="formateur .."/>
-  <input type="date" name="datedebut" [(ngModel)]="dateD" placeholder="date debut .."/>
-  <input type="time" name="datedebut" [(ngModel)]="HeureD" placeholder="Heure debut .."/>
-  <button (click)="OnSearch()">search</button>
-</form>
-<div id="section" *ngIf="isAvailable">
+<div class="login-box">
+  <div class="signin topline">
+<div id="frm">
+    <form>
+      <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>theme</label>
+      <input type="text" class="form-control" name="search" [(ngModel)]="theme" placeholder="theme .."/>
+      </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>formateurt</label>
+      <input type="texte" class="form-control"name="datedebut" [(ngModel)]="formateur" placeholder="formateur .."/>
+    </div>
+      </div>
+    <div class="col">
+      <div class="form-group">
+        <label>date debut</label>
+      <input type="date" class="form-control" name="datedebut" [(ngModel)]="dateD" placeholder="date debut .."/>
+     </div>
+    </div>
+     <div class="col">
+      <div class="form-group">
+        <label>heure debut</label>
+    <input type="time" class="form-control" name="datedebut" [(ngModel)]="HeureD" placeholder="Heure debut .."/>
+      </div>
+  </div>
+      <div class="col">
+        <div class="form-group">
+          <label for=""></label>
+    <button (click)="OnSearch()" class="button-63">recherche</button>
+      </div>
+      </div>
+     </div>
 
-<table  class="table table-bordered">
-  <tr>
-    <th rowspan="3">image</th>
-    <th rowspan="3"><h1> feuille de presence </h1></th>
-    <th> ref:........</th>
-  </tr>
-  <tr>
-    <th>version:......</th>
-  </tr>
-  <tr>
-    <th>date d'application: ......</th>
-  </tr>
-</table>
+    </form>
+    </div>
+    <div id="section" *ngIf="isAvailable">
+
+    <table  class="table table-bordered">
+      <tr>
+        <th rowspan="3"><img style="width: 100px; height: 100px;"
+          src="data:image/jpeg;base64,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" alt=""></th>
+        <th rowspan="3"><h1> feuille de presence </h1></th>
+        <th> ref:........</th>
+      </tr>
+      <tr>
+        <th>version:......</th>
+      </tr>
+      <tr>
+        <th>date d'application: ......</th>
+      </tr>
+    </table>
 
 
 
-<div *ngFor="let cy of Cycles">
-  <strong>Entreprise</strong> :{{cy.entrprise}} <br>
-  <strong>Num Action:  </strong>{{cy.numAction}} -- <strong>choix :</strong>{{cy.choix}} <br>
-  <strong>Theme de formation:</strong> {{cy.theme}} --<strong> Mode de formation:</strong> {{cy.mode}} <br>
-  <strong>Lieu :</strong> {{cy.lieu}}  -- <strong> Gouvernorat:</strong> {{cy.gouvernorat}} -- <strong>Salle:</strong> {{cy.numSalle}} <br>
-  <strong>Periode du: </strong>{{cy.dateDebut}} <strong> Au</strong> {{cy.dateFin}}  --<strong> Horaire a :</strong>{{cy.heureDebut}} -- <strong>duree:</strong> {{cy.duree}}H -- <strong>Pause:</strong> {{cy.pause}} minute
+    <div *ngFor="let cy of Cycles">
+      <strong>Entreprise</strong> :{{cy.entrprise}} <br>
+      <strong>Num Action:  </strong>{{cy.numAction}} -- <strong>choix :</strong>{{cy.choix}} <br>
+      <strong>Theme de formation:</strong> {{cy.theme}} --<strong> Mode de formation:</strong> {{cy.mode}} <br>
+      <strong>Lieu :</strong> {{cy.lieu}}  -- <strong> Gouvernorat:</strong> {{cy.gouvernorat}} -- <strong>Salle:</strong> {{cy.numSalle}} <br>
+      <strong>Periode du: </strong>{{cy.dateDebut}} <strong> Au</strong> {{cy.dateFin}}  --<strong> Horaire a :</strong>{{cy.heureDebut}} -- <strong>duree:</strong> {{cy.duree}}H -- <strong>Pause:</strong> {{cy.pause}} minute
 
+    </div>
+
+
+
+    <div>
+      <table class="table table-bordered">
+      <tr>
+        <th scope="col" rowspan="2" id="ligne">nom et prenom </th>
+        <th scope="col" rowspan="2" id="ligne">cin</th>
+        <th scope="col" rowspan="2" id="ligne">entrprise </th>
+        <th scope="col" rowspan="2" id="ligne"> direction/service</th>
+        <th scope="col" colspan="3" id="ligne">Emargement</th>
+      </tr>
+        <tr>
+        <th *ngFor="let r of resultat" id="ligne">
+           journee du <br>
+          {{r}}</th>
+
+        </tr>
+      <tr *ngFor="let f of formations " >
+        <td id="ligne"> {{f.user.nom}} {{f.user.prenom}}</td>
+        <td id="ligne">{{f.user.infosSupp.cin}}</td>
+        <td id="ligne"> {{f.user.infosSupp.entreprise}}</td>
+        <td id="ligne"> {{f.user.infosSupp.direction}}</td>
+        <td  id="ligne" *ngFor="let r of resultat">  </td>
+
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <th id="ligne" scope="col">nom et prenom du formateur</th>
+        <th id="ligne" scope="col">signature</th>
+      </tr>
+      <tr>
+      <td id="ligne" *ngFor="let cyc of Cycles" style="font-weight:bold ;">
+        {{cyc.formateur.nom}} {{cyc.formateur.prenom}}
+      </td>
+      </tr>
+    </table>
+
+    <h6>signature et cachet de l'organisme de formation/Entreprise</h6>
+    </div>
+    <button printSectionId="section" ngxPrint  class="button-1"> imprimer</button>
+    </div>
+
+
+  </div>
 </div>
 
 
 
-<div>
-  <table class="table table-bordered">
-  <tr>
-    <th scope="col" rowspan="2">nom et prenom </th>
-    <th scope="col" rowspan="2">cin</th>
-    <th scope="col" rowspan="2">entrprise </th>
-    <th scope="col" rowspan="2"> direction/service</th>
-    <th scope="col" colspan="3">idPar</th>
-  </tr>
-    <tr>
-    <th *ngFor="let r of resultat">
-       journee du <br>
-      {{r}}</th>
-
-    </tr>
-  <tr *ngFor="let f of formations " >
-    <td> {{f.user.nom}} {{f.user.prenom}}</td>
-    <td>{{f.user.infosSupp.cin}}</td>
-    <td> {{f.user.infosSupp.entreprise}}</td>
-    <td> {{f.user.infosSupp.direction}}</td>
-    <td  *ngFor="let r of resultat"> {{f.user.id}}</td>
-
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <th>nom et prenom du formateur</th>
-    <th>signature</th>
-  </tr>
-  <tr>
-  <td *ngFor="let cyc of Cycles">
-    {{cyc.formateur.nom}} {{cyc.formateur.prenom}}
-  </td>
-  </tr>
-</table>
-
-<h3>signature et cachet de l'organisme de formation/Entreprise</h3>
-</div>
-<button printSectionId="section" ngxPrint > imprimer</button>
-</div>
 
 
 

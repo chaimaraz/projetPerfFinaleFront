@@ -9,7 +9,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class InscriptionService {
   baseUrl = environment.apiBaseUrl + '/api/user';
-isLoggedIn = new BehaviorSubject(false);
+isLoggedIn:boolean;
   constructor(private http: HttpClient) {}
 
   inscrire(user: User): Observable<User> {
@@ -20,7 +20,7 @@ isLoggedIn = new BehaviorSubject(false);
   }
 
   login(email: string, password: string): Observable<User> {
-    this.isLoggedIn.next(true);
+    this.isLoggedIn=true;
     let params = new HttpParams()
       .append('email', email)
       .append('password', password);
@@ -29,10 +29,14 @@ isLoggedIn = new BehaviorSubject(false);
 
   }
 
+  modifier(user:User):Observable<User>{
+    return this.http.put<User>(`${this.baseUrl}`+'/update', user);
+  }
+
   logoutUser() {
-    this.isLoggedIn.next(false);
-    sessionStorage.removeItem('user');
-    sessionStorage.setItem("isconnecte","false");
+    this.isLoggedIn=false;
+    localStorage.removeItem('user');
+
   }
 
 }

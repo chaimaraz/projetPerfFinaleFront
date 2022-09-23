@@ -1,36 +1,52 @@
 
+<div class="login-box">
+  <div class="signin topline">
 
-<form >
-  <input type="text" name="search" [(ngModel)]="val" placeholder="search ..."/>
-</form>
 
-<div class="container">
-    <h2> liste des cycles</h2>
+    <div class="container">
+      <div id="box">
+        <h2> liste des cycles</h2>
+        <form  class="frm  ">
+          <div class="input-group">
+              <input type="text" name="search" [(ngModel)]="val" class="form-control bg-light border-0 small" placeholder="rechercher..."
+                  aria-label="Search" aria-describedby="basic-addon2"  [(ngModel)]="val">
+              <div class="input-group-append">
+                  <button class="btn btn-primary" type="button">
+                      <i class="fas fa-search fa-sm"></i>
+                  </button>
+              </div>
+          </div>
+    </form>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">idCycle</th>
+            <th scope="col">entrprise</th>
+            <th scope="col">numAction</th>
+            <th scope="col">theme</th>
+            <th scope="col">formateur</th>
+            <th>action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of lescycles | filter:val">
+            <th scope="row">{{c.idCycle}}</th>
+            <td>{{c.entrprise}}</td>
+            <td>{{c.numAction}}</td>
+            <td>{{c.theme}}</td>
+            <td>{{c.formateur.nom}} </td>
+            <td>
+              <div class="form-group row">
+                <div class="col-md-3">
+                <button class="button-88" [routerLink]="[ c.idCycle]">Editer</button></div> <div class="col-md-3"><button class="button-44" (click)="deleteCycle(c.idCycle)">Eliminer</button></div>
+              </div>
+              </td>
+          </tr>
 
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">idCycle</th>
-        <th scope="col">entrprise</th>
-        <th scope="col">numAction</th>
-        <th scope="col">theme</th>
-        <th scope="col">formateur</th>
-        <th>action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let c of lescycles | filter:val">
-        <th scope="row">{{c.idCycle}}</th>
-        <td>{{c.entrprise}}</td>
-        <td>{{c.numAction}}</td>
-        <td>{{c.theme}}</td>
-        <td>{{c.formateur.nom}} </td>
-        <td>
-            <button class="btn btn-info me-2" [routerLink]="[ c.idCycle]">Editer</button>
-            <button class="btn btn-danger" (click)="deleteCycle(c.idCycle)">Eliminer</button>
-        </td>
-      </tr>
-
-    </tbody>
-  </table>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
 </div>
+

@@ -22,6 +22,7 @@ export enum ERole {
 
 
 export class ParticipantInformation {
+  id:number;
   cin: string;
   direction: string;
   entreprise: string;

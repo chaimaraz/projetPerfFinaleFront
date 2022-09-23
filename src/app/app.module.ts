@@ -24,6 +24,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPrintModule } from 'ngx-print';
 import { FormationComponent } from './components/formation/formation.component';
 import { ChaqueFormationComponent } from './components/chaque-formation/chaque-formation.component';
+import { ProfileAdminComponent } from './components/profile-admin/profile-admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { ChaqueFormationComponent } from './components/chaque-formation/chaque-f
     ProfileComponent,
     FichePresenceComponent,
     FormationComponent,
-    ChaqueFormationComponent
+    ChaqueFormationComponent,
+    ProfileAdminComponent
   ],
   imports: [
     BrowserModule,
